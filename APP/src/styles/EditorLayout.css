@@ -1,4 +1,9 @@
-.editor{
-    display:flex;
-    height:calc(100vh - 215px);
+.editor {
+  display: flex;
+
+  height: calc(100vh - 60px - 300px);
+
+  min-height: 400px;
+
+  overflow: hidden;
 }

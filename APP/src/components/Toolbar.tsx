@@ -1,24 +1,39 @@
+import "../styles/Toolbar.css";
+
 function Toolbar() {
   return (
-    <div className="toolbar">
+    <aside className="toolbar">
 
-      <button>
-        ✂ Cut
-      </button>
+      <div className="toolbar-section">
 
-      <button>
-        🎵 Audio
-      </button>
+        <button className="tool-button import-tool">
+          <span className="tool-icon">📥</span>
+          <span>Import</span>
+        </button>
 
-      <button>
-        📝 Text
-      </button>
+        <button className="tool-button">
+          <span className="tool-icon">✂️</span>
+          <span>Cut</span>
+        </button>
 
-      <button>
-        🖼 Media
-      </button>
+        <button className="tool-button">
+          <span className="tool-icon">🎵</span>
+          <span>Audio</span>
+        </button>
 
-    </div>
+        <button className="tool-button">
+          <span className="tool-icon">📝</span>
+          <span>Text</span>
+        </button>
+
+        <button className="tool-button">
+          <span className="tool-icon">🖼️</span>
+          <span>Media</span>
+        </button>
+
+      </div>
+
+    </aside>
   );
 }
 

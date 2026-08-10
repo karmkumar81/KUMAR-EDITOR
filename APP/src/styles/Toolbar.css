@@ -1,0 +1,74 @@
+.toolbar {
+  width: 110px;
+  min-width: 110px;
+  background: #171717;
+  border-right: 1px solid #303030;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 18px 10px;
+
+  box-sizing: border-box;
+}
+
+.toolbar-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tool-button {
+  width: 90px;
+  min-height: 68px;
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  background: #202020;
+  color: #eeeeee;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.tool-button:hover {
+  background: #2b2b2b;
+  border-color: #444444;
+  transform: translateY(-1px);
+}
+
+.tool-button:active {
+  transform: scale(0.97);
+}
+
+.tool-icon {
+  font-size: 21px;
+  line-height: 1;
+}
+
+.tool-button span:last-child {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.import-tool {
+  background: #2563eb;
+  border-color: #3b82f6;
+}
+
+.import-tool:hover {
+  background: #1d4ed8;
+  border-color: #60a5fa;
+}
