@@ -2,15 +2,29 @@ import "../styles/Sidebar.css";
 
 function Sidebar() {
   return (
-    <div className="sidebar">
-      <h3>Tools</h3>
+    <aside className="sidebar">
 
-      <p>✂️ Trim</p>
-      <p>🎵 Audio</p>
-      <p>📝 Text</p>
-      <p>✨ Effects</p>
-      <p>🎨 Filters</p>
-    </div>
+      <h3 className="sidebar-title">Tools</h3>
+
+      <button>📂 Media</button>
+
+      <button>✂️ Trim</button>
+
+      <button>🔪 Split</button>
+
+      <button>📝 Text</button>
+
+      <button>🎵 Audio</button>
+
+      <button>✨ Effects</button>
+
+      <button>🎨 Filters</button>
+
+      <button>⚡ Transitions</button>
+
+      <button>🤖 AI Tools</button>
+
+    </aside>
   );
 }
 

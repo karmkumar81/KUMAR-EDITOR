@@ -1,8 +1,83 @@
-.timeline {
-  height: 120px;
-  background: #181818;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.timeline{
+    height:320px;
+    background:#181818;
+    border-top:2px solid #333;
+    padding:15px;
+    color:white;
+    position:relative;
+}
+
+.time-ruler{
+    display:flex;
+    justify-content:space-between;
+    color:#aaa;
+    border-bottom:1px solid #444;
+    padding-bottom:8px;
+}
+
+.add-button{
+    margin:12px 0;
+    padding:8px 16px;
+    background:#4da6ff;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.add-button:hover{
+    background:#2f8cff;
+}
+
+.track{
+    display:flex;
+    align-items:center;
+    margin-top:16px;
+}
+
+.track-label{
+    width:130px;
+}
+
+.track-line{
+    flex:1;
+    min-height:40px;
+    background:#333;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:5px;
+}
+
+.clip{
+    background:#4da6ff;
+    padding:6px 14px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.clip:hover{
+    transform:scale(1.03);
+}
+
+.selected{
+    border:2px solid #00e5ff;
+    box-shadow:0 0 10px #00e5ff;
+}
+
+.playhead{
+    position:absolute;
+    top:80px;
+    width:2px;
+    height:145px;
+    background:red;
+}
+
+.clip-properties{
+    margin-top:25px;
+    background:#252525;
+    padding:15px;
+    border-radius:8px;
 }

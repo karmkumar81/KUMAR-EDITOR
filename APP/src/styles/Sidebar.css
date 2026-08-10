@@ -1,6 +1,31 @@
-.sidebar {
-  width: 220px;
-  background: #222;
-  color: white;
-  padding: 20px;
+.sidebar{
+    width:230px;
+    background:#202020;
+    display:flex;
+    flex-direction:column;
+    padding:15px;
+    gap:10px;
+    border-right:1px solid #333;
+}
+
+.sidebar-title{
+    color:white;
+    margin-bottom:10px;
+    text-align:center;
+}
+
+.sidebar button{
+    background:#2d2d2d;
+    color:white;
+    border:none;
+    padding:12px;
+    border-radius:8px;
+    text-align:left;
+    cursor:pointer;
+    transition:0.2s;
+    font-size:15px;
+}
+
+.sidebar button:hover{
+    background:#3f3f3f;
 }
