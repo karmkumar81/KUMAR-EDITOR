@@ -1,13 +1,19 @@
-
 import "../styles/Toolbar.css";
 
-function Toolbar() {
+type ToolbarProps = {
+  onImport: () => void;
+};
+
+function Toolbar({ onImport }: ToolbarProps) {
   return (
     <aside className="toolbar">
 
       <div className="toolbar-section">
 
-        <button className="tool-button import-tool">
+        <button
+          className="tool-button import-tool"
+          onClick={onImport}
+        >
           <span className="tool-icon">📥</span>
           <span>Import</span>
         </button>

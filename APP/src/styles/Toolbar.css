@@ -1,88 +1,34 @@
-
-.toolbar {
-  width: 110px;
-  min-width: 110px;
-  height: 100%;
-
-  background: #171717;
-
-  border-right: 1px solid #303030;
-
-  display: flex;
-  flex-direction: column;
-
-  padding: 14px 10px;
-
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
 
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #111;
+  color: white;
+  font-family: Arial, sans-serif;
   overflow: hidden;
 }
 
-.toolbar-section {
-  display: flex;
-  flex-direction: column;
+.app {
+  width: 100%;
+  height: 100vh;
 
-  gap: 8px;
-}
+  display: grid;
 
-.tool-button {
-  width: 90px;
-  min-height: 62px;
+  grid-template-rows: 60px minmax(0, 1fr) 260px;
 
-  border: 1px solid transparent;
-  border-radius: 10px;
+  overflow: hidden;
 
-  background: #202020;
-  color: #eeeeee;
-
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
-  justify-content: center;
-
-  gap: 5px;
-
-  cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.tool-button:hover {
-  background: #2b2b2b;
-
-  border-color: #444444;
-
-  transform: translateY(-1px);
-}
-
-.tool-button:active {
-  transform: scale(0.97);
-}
-
-.tool-icon {
-  font-size: 20px;
-
-  line-height: 1;
-}
-
-.tool-button span:last-child {
-  font-size: 12px;
-
-  font-weight: 500;
-}
-
-.import-tool {
-  background: #2563eb;
-
-  border-color: #3b82f6;
-}
-
-.import-tool:hover {
-  background: #1d4ed8;
-
-  border-color: #60a5fa;
+  background: #141414;
 }

@@ -18,10 +18,11 @@ function EditorLayout() {
           onTimeUpdate={() => {}}
           onDurationChange={() => {}}
           onVideoNameChange={() => {}}
+          onMediaReady={() => {}}
         />
       </div>
 
-      <Timeline currentTime={0} duration={0} videoName="" />
+      <Timeline currentTime={0} duration={0} videoName="" mediaURL="" mediaType="video" />
 
       <Statusbar />
     </>

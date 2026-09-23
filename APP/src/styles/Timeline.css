@@ -1,194 +1,496 @@
-.timeline {
-  width: 100%;
-  height: 290px;
-  min-height: 290px;
-  flex: 0 0 290px;
+/* =========================================================
+   KUMAR COMPACT TIMELINE
+========================================================= */
 
-  background: #141414;
-
-  border-top: 1px solid #303030;
-
-  padding: 12px 16px;
-
-  color: white;
-
+.kumar-timeline {
   position: relative;
 
-  box-sizing: border-box;
+  width: 100%;
+  height: 125px;
+
+  min-height: 125px;
+
+  background: #0b0e13;
+
+  border-top: 1px solid #292f39;
 
   overflow: hidden;
+
+  color: #ffffff;
 }
 
-/* Time ruler */
 
-.time-ruler {
-  height: 25px;
+/* =========================================================
+   MAIN TIMELINE AREA
+========================================================= */
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.timeline-main-area {
+  width: 100%;
+  height: 125px;
 
-  padding-left: 100px;
-  padding-right: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
 
-  color: #888;
-
-  font-size: 12px;
+  background: #0b0e12;
 }
 
-/* Playhead */
+.timeline-main-area::-webkit-scrollbar {
+  height: 6px;
+}
 
-.playhead {
+.timeline-main-area::-webkit-scrollbar-track {
+  background: #101319;
+}
+
+.timeline-main-area::-webkit-scrollbar-thumb {
+  background: #39414e;
+
+  border-radius: 8px;
+}
+
+.timeline-main-area::-webkit-scrollbar-thumb:hover {
+  background: #4b5666;
+}
+
+
+/* =========================================================
+   CANVAS
+========================================================= */
+
+.timeline-canvas {
+  position: relative;
+
+  min-width: 100%;
+
+  height: 125px;
+
+  padding-top: 24px;
+}
+
+
+/* =========================================================
+   RULER
+========================================================= */
+
+.timeline-ruler {
   position: absolute;
 
-  top: 35px;
-  bottom: 15px;
-
-  width: 2px;
-
-  background: #ff3b3b;
-
-  z-index: 10;
-
-  pointer-events: none;
-}
-
-/* Add button */
-
-.add-button {
-  margin: 5px 0 10px 100px;
-
-  padding: 8px 14px;
-
-  border: none;
-  border-radius: 6px;
-
-  background: #2563eb;
-  color: white;
-
-  cursor: pointer;
-
-  font-size: 13px;
-}
-
-.add-button:hover {
-  background: #1d4ed8;
-}
-
-/* Track */
-
-.track {
-  display: flex;
+  left: 0;
+  top: 0;
 
   width: 100%;
+  height: 24px;
 
-  height: 45px;
+  background: #10141a;
 
-  margin-bottom: 8px;
+  border-bottom: 1px solid #292f39;
+
+  z-index: 5;
 }
 
-/* Track label */
+.timeline-ruler-mark {
+  position: absolute;
+
+  top: 0;
+
+  width: 1px;
+  height: 24px;
+}
+
+.timeline-ruler-mark span {
+  position: absolute;
+
+  top: 4px;
+  left: 5px;
+
+  color: #7b8696;
+
+  font-size: 9px;
+
+  white-space: nowrap;
+
+  font-variant-numeric:
+    tabular-nums;
+}
+
+.ruler-tick {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 1px;
+  height: 6px;
+
+  background: #4a5360;
+}
+
+
+/* =========================================================
+   TRACK ROW
+========================================================= */
+
+.timeline-row {
+  width: 100%;
+  height: 32px;
+
+  display: flex;
+}
+
+
+/* =========================================================
+   TRACK LABEL
+========================================================= */
 
 .track-label {
-  width: 100px;
-  min-width: 100px;
+  position: sticky;
+
+  left: 0;
+
+  z-index: 8;
+
+  width: 92px;
+  min-width: 92px;
+
+  height: 32px;
 
   display: flex;
   align-items: center;
 
-  padding-left: 8px;
+  gap: 7px;
 
-  background: #202020;
+  padding: 0 9px;
 
-  border: 1px solid #333;
+  background: #171b22;
 
-  color: #ddd;
+  border-right: 1px solid #2c323b;
 
-  font-size: 12px;
+  border-bottom: 1px solid #292f38;
+
+  box-shadow:
+    4px 0 9px rgba(
+      0,
+      0,
+      0,
+      0.18
+    );
 }
 
-/* Track line */
+.track-label span {
+  width: 19px;
+  height: 19px;
 
-.track-line {
-  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  min-width: 0;
+  border-radius: 5px;
 
-  background: #1b1b1b;
+  background: #232a34;
 
-  border: 1px solid #333;
+  font-size: 10px;
+}
 
+.track-label strong {
+  color: #c0c8d3;
+
+  font-size: 9px;
+
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   TRACK CONTENT
+========================================================= */
+
+.track-content {
   position: relative;
 
-  overflow: hidden;
+  flex: 1;
+
+  height: 32px;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 79px,
+      rgba(
+        255,
+        255,
+        255,
+        0.035
+      ) 80px
+    ),
+    #13171c;
+
+  border-bottom: 1px solid #292f38;
 }
 
-/* Clip */
 
-.clip {
-  height: 35px;
+/* =========================================================
+   VIDEO CLIP
+========================================================= */
 
-  margin: 4px;
+.timeline-clip {
+  position: absolute;
 
-  padding: 0 12px;
+  top: 3px;
+  left: 4px;
+
+  height: 26px;
 
   display: flex;
   align-items: center;
 
-  background: #2563eb;
+  gap: 7px;
 
-  border-radius: 6px;
+  padding: 0 8px;
+
+  border: 1px solid #5c82ef;
+
+  border-radius: 5px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2a5bd8,
+      #386de7
+    );
 
   color: white;
 
-  font-size: 12px;
-
-  cursor: pointer;
+  overflow: hidden;
 
   white-space: nowrap;
+
+  box-shadow:
+    0 2px 8px rgba(
+      0,
+      0,
+      0,
+      0.25
+    );
+}
+
+.timeline-clip.photo-clip {
+  background:
+    linear-gradient(
+      135deg,
+      #6a48d8,
+      #825ce7
+    );
+}
+
+.clip-icon {
+  flex-shrink: 0;
+
+  font-size: 10px;
+}
+
+.clip-name {
+  min-width: 0;
 
   overflow: hidden;
 
   text-overflow: ellipsis;
+
+  font-size: 8px;
+
+  font-weight: 600;
 }
 
-.clip:hover {
-  background: #3b82f6;
+.clip-duration {
+  flex-shrink: 0;
+
+  margin-left: auto;
+
+  padding-left: 6px;
+
+  color: #e0e7ff;
+
+  font-size: 8px;
+
+  font-variant-numeric:
+    tabular-nums;
 }
 
-.clip.selected {
-  outline: 2px solid #60a5fa;
-}
 
-/* Clip properties */
+/* =========================================================
+   EMPTY TRACK
+========================================================= */
 
-.clip-properties {
+.empty-track {
   position: absolute;
 
-  right: 16px;
-  bottom: 10px;
+  left: 10px;
+  top: 50%;
 
-  width: 220px;
+  transform:
+    translateY(-50%);
 
-  padding: 8px 12px;
+  color: #3b434f;
 
-  background: #1b1b1b;
-
-  border: 1px solid #333;
-
-  border-radius: 6px;
-
-  font-size: 11px;
+  font-size: 8px;
 }
 
-.clip-properties h3 {
-  margin-bottom: 5px;
+
+/* =========================================================
+   PLAYHEAD
+========================================================= */
+
+.timeline-playhead {
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  width: 2px;
+
+  z-index: 15;
+
+  pointer-events: none;
+}
+
+.timeline-playhead::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 2px;
+
+  background: #ff4055;
+
+  box-shadow:
+    0 0 8px rgba(
+      255,
+      64,
+      85,
+      0.55
+    );
+}
+
+.playhead-handle {
+  position: absolute;
+
+  top: -1px;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  width: 16px;
+  height: 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ff4055;
+
+  border-radius: 3px;
+
+  color: white;
+
+  font-size: 8px;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   PLAY / PAUSE
+========================================================= */
+
+.timeline-play-button {
+  position: absolute;
+
+  right: 12px;
+  bottom: 8px;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #597be1;
+
+  border-radius: 8px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #3566df 0%,
+      #2856c6 100%
+    );
+
+  color: white;
 
   font-size: 12px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 13px rgba(
+      37,
+      86,
+      198,
+      0.3
+    );
+
+  z-index: 30;
+
+  transition:
+    transform 0.16s ease,
+    background 0.16s ease;
 }
 
-.clip-properties p {
-  margin: 2px 0;
+.timeline-play-button:hover:not(
+  :disabled
+) {
+  background:
+    linear-gradient(
+      180deg,
+      #4778ed 0%,
+      #3265d4 100%
+    );
 
-  color: #aaa;
+  transform:
+    translateY(-1px);
+}
+
+.timeline-play-button:active:not(
+  :disabled
+) {
+  transform:
+    scale(0.95);
+}
+
+.timeline-play-button:disabled {
+  opacity: 0.4;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+  .track-label {
+    width: 75px;
+    min-width: 75px;
+  }
+
+  .timeline-play-button {
+    right: 7px;
+  }
 }

@@ -1,22 +1,27 @@
+/* =========================================================
+   KUMAR PREVIEW
+========================================================= */
 
 .preview {
-  flex: 1 1 auto;
+  width: 100%;
+  height: 100%;
 
   min-width: 0;
   min-height: 0;
 
-  background: #202020;
+  padding: 8px 10px 5px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  padding: 18px;
-
-  box-sizing: border-box;
+  background: #090c11;
 
   overflow: hidden;
+
+  box-sizing: border-box;
 }
+
+
+/* =========================================================
+   PREVIEW SCREEN
+========================================================= */
 
 .preview-screen {
   width: 100%;
@@ -25,90 +30,499 @@
   min-width: 0;
   min-height: 0;
 
-  background: #101010;
+  display: grid;
 
-  border: 1px solid #343434;
-  border-radius: 14px;
-
-  color: white;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  padding: 18px;
-
-  box-sizing: border-box;
+  /*
+    Video gets maximum possible area.
+    Only compact control/info rows remain.
+  */
+  grid-template-rows:
+    minmax(0, 1fr)
+    46px
+    30px;
 
   overflow: hidden;
 
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  border: 1px solid #292f39;
+
+  border-radius: 10px;
+
+  background: #11151c;
+
+  color: #f5f7fa;
+
+  box-shadow:
+    0 8px 25px rgba(
+      0,
+      0,
+      0,
+      0.25
+    );
 }
 
-.preview-screen h2 {
-  margin: 0 0 14px;
 
-  font-size: 20px;
-  font-weight: 600;
+/* =========================================================
+   VIDEO AREA
+========================================================= */
 
-  flex-shrink: 0;
+.video-area {
+  min-width: 0;
+  min-height: 0;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  padding: 8px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #141923 0%,
+      #0b0e13 58%,
+      #080a0e 100%
+    );
 }
+
+
+/* subtle grid */
+
+.video-area::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.055;
+
+  background-image:
+    linear-gradient(
+      #ffffff 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      #ffffff 1px,
+      transparent 1px
+    );
+
+  background-size: 32px 32px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   VIDEO
+========================================================= */
 
 .video-player {
-  width: 90%;
+  position: relative;
+
+  z-index: 2;
+
+  display: block;
+
+  width: auto;
   height: auto;
 
-  max-width: 1100px;
-  max-height: calc(100% - 90px);
-
-  background: #000;
-
-  border-radius: 8px;
+  max-width: 100%;
+  max-height: 100%;
 
   object-fit: contain;
 
-  display: block;
+  background: #000;
+
+  border-radius: 4px;
+
+  box-shadow:
+    0 10px 30px rgba(
+      0,
+      0,
+      0,
+      0.45
+    );
 }
 
-.controls {
-  margin-top: 14px;
+
+/* =========================================================
+   EMPTY PREVIEW
+========================================================= */
+
+.empty-preview {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
 
   display: flex;
+  flex-direction: column;
+
+  align-items: center;
   justify-content: center;
+
+  text-align: center;
+
+  padding: 15px;
+}
+
+.empty-icon {
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 12px;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #222a3b,
+      #181e2a
+    );
+
+  border: 1px solid #343d50;
+
+  font-size: 28px;
+
+  box-shadow:
+    0 10px 24px rgba(
+      0,
+      0,
+      0,
+      0.3
+    );
+}
+
+.empty-preview h3 {
+  margin: 0 0 7px;
+
+  color: #f4f6fa;
+
+  font-size: 20px;
+
+  font-weight: 750;
+}
+
+.empty-preview p {
+  margin: 0 0 20px;
+
+  color: #7f8999;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   IMPORT BUTTONS
+========================================================= */
+
+.empty-actions {
+  display: flex;
+
+  gap: 12px;
+}
+
+.empty-media-button {
+  min-width: 215px;
+
+  min-height: 58px;
+
+  display: flex;
   align-items: center;
 
   gap: 12px;
 
-  flex-shrink: 0;
-}
+  padding: 10px 16px;
 
-.controls button {
-  width: 44px;
-  height: 44px;
+  border: 1px solid #343d4b;
 
-  border: 1px solid #444;
-  border-radius: 50%;
+  border-radius: 10px;
 
-  background: #292929;
-  color: white;
+  background:
+    linear-gradient(
+      180deg,
+      #1d232d 0%,
+      #181d25 100%
+    );
+
+  color: #e1e6ed;
+
+  text-align: left;
 
   cursor: pointer;
 
-  font-size: 17px;
-
   transition:
-    background 0.2s ease,
-    transform 0.2s ease;
+    transform 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease;
 }
 
-.controls button:hover {
-  background: #3a3a3a;
-  transform: scale(1.05);
+.empty-media-button:hover {
+  transform:
+    translateY(-1px);
+
+  background: #272e39;
+
+  border-color: #4c5869;
 }
 
-.preview-screen > p {
-  color: #888;
+.empty-media-button > span {
+  font-size: 22px;
+}
 
+.empty-media-button div {
+  display: flex;
+  flex-direction: column;
+}
+
+.empty-media-button strong {
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.empty-media-button small {
+  margin-top: 4px;
+
+  color: #7b8697;
+
+  font-size: 9px;
+}
+
+.empty-media-button.primary {
+  background:
+    linear-gradient(
+      135deg,
+      #3d70ee,
+      #2c5ed8
+    );
+
+  border-color: #5880ef;
+
+  color: white;
+
+  box-shadow:
+    0 6px 16px rgba(
+      45,
+      94,
+      216,
+      0.25
+    );
+}
+
+.empty-media-button.primary small {
+  color: #dce5ff;
+}
+
+
+/* =========================================================
+   DROP HINT
+========================================================= */
+
+.drop-hint {
+  margin-top: 14px;
+
+  color: #626d7d;
+
+  font-size: 10px;
+}
+
+.drop-hint strong {
+  color: #929dad;
+}
+
+
+/* =========================================================
+   FILE INPUT
+========================================================= */
+
+.hidden-file-input {
+  display: none;
+}
+
+
+/* =========================================================
+   CONVERSION
+========================================================= */
+
+.conversion-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 20;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  background:
+    rgba(
+      7,
+      9,
+      13,
+      0.9
+    );
+
+  backdrop-filter:
+    blur(5px);
+
+  color: white;
+}
+
+.conversion-overlay strong {
   font-size: 14px;
+}
+
+.conversion-overlay span {
+  color: #8c96a6;
+
+  font-size: 11px;
+}
+
+.conversion-spinner {
+  width: 32px;
+  height: 32px;
+
+  margin-bottom: 4px;
+
+  border: 3px solid #303846;
+
+  border-top-color: #5b7df5;
+
+  border-radius: 50%;
+
+  animation:
+    spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.video-error {
+  position: absolute;
+
+  left: 50%;
+  bottom: 12px;
+
+  transform:
+    translateX(-50%);
+
+  z-index: 30;
+
+  max-width: 80%;
+
+  padding: 8px 13px;
+
+  border-radius: 7px;
+
+  background: #35181d;
+
+  border: 1px solid #71313a;
+
+  color: #ffbcc3;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   INFO BAR
+========================================================= */
+
+.video-info {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 32px;
+
+  padding: 0 14px;
+
+  background: #11151c;
+
+  border-top: 1px solid #292f39;
+
+  color: #9aa4b4;
+
+  font-size: 11px;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+}
+
+.video-info span {
+  min-width: 0;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.video-info strong {
+  margin-right: 7px;
+
+  color: #657080;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+.file-info {
+  max-width: 45%;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 800px) {
+  .empty-actions {
+    flex-direction: column;
+  }
+
+  .empty-media-button {
+    min-width: 210px;
+  }
+
+  .video-info {
+    gap: 14px;
+  }
+
+  .file-info {
+    display: none;
+  }
 }
