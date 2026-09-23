@@ -1,3 +1,4 @@
+
 import "../styles/Statusbar.css";
 
 function Statusbar() {

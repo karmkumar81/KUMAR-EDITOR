@@ -1,26 +1,33 @@
+
 .toolbar {
   width: 110px;
   min-width: 110px;
+  height: 100%;
+
   background: #171717;
+
   border-right: 1px solid #303030;
 
   display: flex;
   flex-direction: column;
 
-  padding: 18px 10px;
+  padding: 14px 10px;
 
   box-sizing: border-box;
+
+  overflow: hidden;
 }
 
 .toolbar-section {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+
+  gap: 8px;
 }
 
 .tool-button {
   width: 90px;
-  min-height: 68px;
+  min-height: 62px;
 
   border: 1px solid transparent;
   border-radius: 10px;
@@ -30,10 +37,11 @@
 
   display: flex;
   flex-direction: column;
+
   align-items: center;
   justify-content: center;
 
-  gap: 6px;
+  gap: 5px;
 
   cursor: pointer;
 
@@ -45,7 +53,9 @@
 
 .tool-button:hover {
   background: #2b2b2b;
+
   border-color: #444444;
+
   transform: translateY(-1px);
 }
 
@@ -54,21 +64,25 @@
 }
 
 .tool-icon {
-  font-size: 21px;
+  font-size: 20px;
+
   line-height: 1;
 }
 
 .tool-button span:last-child {
   font-size: 12px;
+
   font-weight: 500;
 }
 
 .import-tool {
   background: #2563eb;
+
   border-color: #3b82f6;
 }
 
 .import-tool:hover {
   background: #1d4ed8;
+
   border-color: #60a5fa;
 }

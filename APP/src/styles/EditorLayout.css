@@ -1,9 +1,11 @@
 .editor {
+  flex: 1 1 auto;
+
+  min-height: 0;
+  min-width: 0;
+
   display: flex;
-
-  height: calc(100vh - 60px - 300px);
-
-  min-height: 400px;
+  flex-direction: row;
 
   overflow: hidden;
 }

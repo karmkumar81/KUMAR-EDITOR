@@ -1,3 +1,4 @@
+
 import "../styles/EditorLayout.css";
 
 import Navbar from "../components/Navbar";
@@ -8,15 +9,19 @@ import Statusbar from "../components/Statusbar";
 
 function EditorLayout() {
   return (
-    <>
+  <>
       <Navbar />
 
       <div className="editor">
         <Sidebar />
-        <Preview />
+        <Preview
+          onTimeUpdate={() => {}}
+          onDurationChange={() => {}}
+          onVideoNameChange={() => {}}
+        />
       </div>
 
-      <Timeline />
+      <Timeline currentTime={0} duration={0} videoName="" />
 
       <Statusbar />
     </>
