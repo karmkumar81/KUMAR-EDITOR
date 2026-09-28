@@ -1,0 +1,8 @@
+{
+  "name": "Kumar Editor",
+  "description": "Video and photo editor with multi-track timeline, video preview, trimming, text and audio overlays, and video export tools.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
